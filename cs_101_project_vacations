@@ -3,17 +3,37 @@
 disney = 0
 ibiza = 0
 everest = 0
-children = 1
+children = 0
 summer = True
-budget = 1000000
+budget = 0
 
 # intro message
 
+print("")
 print("Hello! Welcome to Cassian's Holiday Helper!\nOur mission is to help you find the perfect holiday!\n")
-
 print("We currently have availability for the following destinations:\n1: Disney, 2: Ibiza, 3. Mount Everset\n")
 
-print("Based on the info you've provided, we've used the most advanced AI to conclusively determine that:\n")
+#questions
+
+children_question = input("Do you have children? Enter Yes or No: ")
+
+if children_question.lower() == "Yes":
+    children = 1
+else:
+    children = 0
+
+season_question = input("When do you want to go? Enter Summer or Winter: ")
+
+if season_question.lower() == "Summer":
+    summer = True
+else:
+    summer = False
+
+budget_question = input("What is your budget? ")
+
+budget = float(budget_question)
+
+print("Based on the info you've provided, we've used advanced AI to determine that:\n")
 
 # inputs from answers
 
@@ -52,21 +72,9 @@ else:
 
 if disney > ibiza and disney > everest:
     print("You're doing to Disney! Get ready to spend a load of money on tat!")
-elif disney == ibiza:
-    print("Disney or Ibiza? Either Mickey Mouse or House Music - the choice is yours!")
-elif disney == everest:
-    print("Although it seems unlikely, but you should pick between going to Disney and climbing Everest!")
-
-if ibiza > disney and ibiza > everest:
+elif ibiza > disney and ibiza > everest:
     print("Back to the Island!")
-elif ibiza == disney:
-    print("Disney or Ibiza? Either Mickey Mouse or House Music - the choice is yours!")
-elif ibiza == everest:
-    print("Although it seems unlikely, but you should pick between partying in Ibiza and climbing Everest!")
-
-if everest > disney and everest > ibiza:
+elif everest > disney and everest > ibiza:
     print("You're climbing Everest! We hope you like heights!")
-elif everest == disney:
-    print("Although it seems unlikely, but you should pick between going to Disney and climbing Everest!")
-elif disney == everest:
-    print("Although it seems unlikely, but you should pick between partying in Ibiza and climbing Everest!")
+else:
+    print("Although it seems unlikely, you should pick between the available options.")
