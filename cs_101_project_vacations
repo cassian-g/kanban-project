@@ -1,15 +1,72 @@
+# variables
 
-def cassian_function(one, two):
-    if one > two:
-        return False
-    else:
-        return True
+disney = 0
+ibiza = 0
+everest = 0
+children = 1
+summer = True
+budget = 1000000
 
-print(cassian_function(1, 3))
+# intro message
 
+print("Hello! Welcome to Cassian's Holiday Helper!\nOur mission is to help you find the perfect holiday!\n")
 
+print("We currently have availability for the following destinations:\n1: Disney, 2: Ibiza, 3. Mount Everset\n")
 
+print("Based on the info you've provided, we've used the most advanced AI to conclusively determine that:\n")
 
+# inputs from answers
 
+if children != 0:
+    disney += 5
+    ibiza += 2
+    everest += 0
 
+if summer == True:
+    disney += 5
+    ibiza += 5
+    everest += 5
+else:
+    disney += 4
+    ibiza += 2
+    everest += 0
 
+if budget > 10000:
+    disney += 4
+    ibiza += 3
+    everest += 5
+elif budget > 5000:
+    disney += 4
+    ibiza += 5
+    everest += 2
+elif budget > 1000:
+    disney += 3
+    ibiza += 5
+    everest += 0
+else:
+    disney += 1
+    ibiza += 2
+    everest += 0
+
+# printing the best option
+
+if disney > ibiza and disney > everest:
+    print("You're doing to Disney! Get ready to spend a load of money on tat!")
+elif disney == ibiza:
+    print("Disney or Ibiza? Either Mickey Mouse or House Music - the choice is yours!")
+elif disney == everest:
+    print("Although it seems unlikely, but you should pick between going to Disney and climbing Everest!")
+
+if ibiza > disney and ibiza > everest:
+    print("Back to the Island!")
+elif ibiza == disney:
+    print("Disney or Ibiza? Either Mickey Mouse or House Music - the choice is yours!")
+elif ibiza == everest:
+    print("Although it seems unlikely, but you should pick between partying in Ibiza and climbing Everest!")
+
+if everest > disney and everest > ibiza:
+    print("You're climbing Everest! We hope you like heights!")
+elif everest == disney:
+    print("Although it seems unlikely, but you should pick between going to Disney and climbing Everest!")
+elif disney == everest:
+    print("Although it seems unlikely, but you should pick between partying in Ibiza and climbing Everest!")
