@@ -1,0 +1,15 @@
+
+def cassian_function(one, two):
+    if one > two:
+        return False
+    else:
+        return True
+
+print(cassian_function(1, 3))
+
+
+
+
+
+
+
