@@ -1,0 +1,34 @@
+import random
+
+# Collect the names of each player.
+
+print("Player one, what is your name?")
+player_one_name = input(str(""))
+
+print("Player two, what is your name?")
+player_two_name = input(str(""))
+
+# Set up first game
+
+print("{}, you will set a number for {} to guess. The number must be at least 10 but no more than 100.".format(player_one_name, player_two_name))
+first_round_number = input("")
+print("{}, you will now try to guess the number {} selected.".format(player_two_name, player_one_name))
+
+# First round of guesses
+
+first_round_guess = input("")
+first_round_counter = 0
+
+while first_round_guess != first_round_number:
+    first_round_counter += 1
+    if first_round_guess[0] == first_round_number[0]:
+        correct_first_digit = first_round_guess[0]
+        print("The first digit is {}! Guess again!".format(correct_first_digit))
+        first_round_guess = input("")
+    elif first_round_guess[1] == first_round_number[1]:
+        correct_second_digit = first_round_guess[1]
+        print("The second digit is {}! Guess again!".format(correct_second_digit))
+        first_round_guess = input("")
+    
+if first_round_guess == first_round_number:
+    print("Congrats {}! You correctly guessed the number was {}. You took {} guesses!".format(player_two_name, first_round_number, first_round_counter))
