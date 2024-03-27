@@ -1,12 +1,19 @@
-import './App.css';
-import SearchBar from './SearchBar';
+import React from "react";
+import SearchBar from "./SearchBar";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div className="App">
-      <SearchBar />
+    <div className={styles.background}> {/* Use styles.background */}
+      <div className={styles.leftsection}> {/* Use styles.leftsection */}
+        <SearchBar />
+      </div>
+      <div className={styles.rightsection}> {/* Use styles.rightsection */}
+        <h1>Your Playlist</h1>
+      </div>
     </div>
   );
 }
 
 export default App;
+

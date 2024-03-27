@@ -225,8 +225,9 @@ const arrayOfTracks = [
   },
 ];
 
-const onSearch = () => {
-
+function onSearch(query) {
+  return arrayOfTracks.map(track => track);
 }
 
 export default onSearch;
+
