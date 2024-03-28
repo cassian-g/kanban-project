@@ -1,0 +1,59 @@
+/* SearchResults.module.css */
+
+.resultsContainer {
+  margin-top: 20px;
+}
+
+.resultsTitle {
+  text-align: center;
+  color: #333;
+}
+
+.tracklistContainer {
+  width: 90%;
+  margin: 0 auto; /* Center the container */
+}
+
+.tracklist {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tracklist th,
+.tracklist td {
+  padding: 10px;
+  text-align: center;
+}
+
+.tracklist th {
+  border-bottom: 1px solid #333737;
+  color: #666;
+}
+
+.tracklist td {
+  color: white;
+}
+
+.tracklist tr {
+  padding-bottom: 15px;
+}
+
+.tracklist tr:not(:first-child):hover {
+  background-color: #333737;
+}
+
+.tracklist button {
+  background-color: transparent;
+  color: white;
+  border-radius: 12px;
+  border: 1px solid #666666;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+  margin-top: 4.5px;
+}
+
+.tracklist button:hover {
+  border-color: white;
+}
+

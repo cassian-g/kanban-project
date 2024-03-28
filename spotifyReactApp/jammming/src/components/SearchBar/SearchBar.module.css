@@ -1,15 +1,15 @@
-.search-bar {
+.searchBar {
   margin-top: 10px;
   margin-left: 20px;
 }
 
-.search-form {
+.searchForm {
   display: flex;
   margin-left: 20px;
   align-items: left;
 }
 
-.search-input {
+.searchInput {
   padding: 10px;
   width: 250px;
   margin-right: 10px;
@@ -19,7 +19,7 @@
   outline: none;
 }
 
-.search-button {
+.searchButton {
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
@@ -27,14 +27,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.search-button:hover {
+.searchButton:hover {
   background-color: #15a748;
 }
 
 h1 {
   margin-left: 20px;
 }
-
