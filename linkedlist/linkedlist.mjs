@@ -1,111 +1,51 @@
-import Node from "./node.mjs";
+import Node from './node.mjs';
 
 class LinkedList {
   constructor() {
     this.head = null;
-    this.tail = null;
   }
 
   getHead() {
-    return this.head;
-  }
-
-  getTail() {
-    return this.tail;
-  }
-
-  addHead(data) {
-    const newNode = new Node(data);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
+    if (this.head) {
+      return this.head.data;
     } else {
-      this.head.setPrev(newNode);
-      newNode.setNext(this.head);
-      this.head = newNode;
+      console.log('No head node');
     }
   }
 
-  addTail(data) {
-    const newNode = new Node(data);
-    if (!this.tail) {
-      this.head = newNode;
-      this.tail = newNode;
+  addHead(data) {
+    const newHead = new Node(data);
+    if (this.head) {
+      newHead.setNext(this.head);
+      this.head = newHead;
     } else {
-      this.tail.setNext(newNode);
-      newNode.setPrev(this.tail);
-      this.tail = newNode;
+      this.head = newHead;
     }
   }
 
   removeHead() {
-    if (!this.head) {
-      return;
+    if (this.head && this.head.getNext) {
+      const oldHead = this.head; 
+      this.head = oldHead.getNext();
+      oldHead.setNext(null);
+      return oldHead.data;
+    } else if (this.head) {
+      this.head = null;
+      return thisHead.data;
     } else {
-      let newHead = this.head.getNext();
-      if (!newHead) {
-        this.head = null;
-        this.tail = null;
-      } else {
-        this.head.setNext(null);
-        newHead.setPrev(null);
-        this.head = newHead;
-      }
+      throw new Error('No head node to remove')
     }
-  }
-
-  removeTail() {
-    if (!this.tail) {
-      return;
-    } else {
-      let newTail = this.tail.getPrev();
-      if (!newTail) {
-        this.head = null;
-        this.tail = null;
-      } else {
-        this.tail.setPrev(null);
-        newTail.setNext(null);
-        this.tail = newTail;
-      }
-    }
-  }
-
-  removeNodeByData(data) {
-    let current = this.head;
-    while (current) {
-      if (current.data === data) {
-        if (current === this.head) {
-          this.removeHead();
-          break;
-        } else if (current === this.tail) {
-          this.removeTail();
-          break;
-        } else {
-          let prevNode = current.getPrev();
-          let nextNode = current.getNext();
-          prevNode.setNext(nextNode);
-          nextNode.setPrev(prevNode);
-          current.setNext(null);
-          current.setPrev(null);
-          break;
-        }
-      } else {
-        current = current.getNext();
-      }
-    }
-    return;
   }
 
   print() {
-    console.log('<Head>');
+    console.log('<Head>')
     let current = this.head;
     while (current) {
       console.log(current.data);
       current = current.getNext();
     }
-    console.log('<Tail>');
+    console.log('<Tail>')
   }
-
 }
 
 export default LinkedList;
